@@ -6,5 +6,5 @@ package com.lovecust.network;
  * Constant fields for network.
  */
 public class NetworkConstant {
-	public static String server = "http://apis.lovecust.com/";
+	public static String server = "http://api.lovecust.com/";
 }

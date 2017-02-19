@@ -8,6 +8,7 @@ import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -70,7 +71,11 @@ class NetworkUtil {
 	 * @return Base client.
 	 */
 	private static OkHttpClient getBaseClient(String agent, String header) {
+		HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
+		// set your desired log level
+		logging.setLevel(HttpLoggingInterceptor.Level.BODY);
 		return new OkHttpClient.Builder()
+				.addInterceptor(logging)
 				.addInterceptor(chain -> {
 					Request request = chain.request()
 							.newBuilder()

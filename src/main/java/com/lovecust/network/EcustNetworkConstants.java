@@ -7,7 +7,7 @@ package com.lovecust.network;
  */
 class EcustNetworkConstants {
 	public static String server = NetworkConstant.server;
-	private static final String API_PREFIX = "/apis/ecust";
+	private static final String API_PREFIX = "/ecust";
 	/**
 	 * Ecust library module.
 	 */

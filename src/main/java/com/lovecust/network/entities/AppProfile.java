@@ -119,8 +119,26 @@ public class AppProfile {
 
 	@Override
 	public String toString() {
+		return toJSON();
+	}
+
+	/**
+	 * Get json string from this object.
+	 *
+	 * @return JSON String.
+	 */
+	public String toJSON() {
 		return new Gson().toJson(this);
 	}
 
+	/**
+	 * Get object from json.
+	 *
+	 * @param json Object JSON.
+	 * @return Object.
+	 */
+	public static AppProfile fromJSON(String json) {
+		return new Gson().fromJson(json, AppProfile.class);
+	}
 
 }

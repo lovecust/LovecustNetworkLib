@@ -7,7 +7,7 @@ package com.lovecust.network;
  */
 class LovecustNetworkConstants {
 	public static String server = NetworkConstant.server;
-	private static final String API_PREFIX = "/apis/lovecust";
+	private static final String API_PREFIX = "/lovecust";
 
 	private static final String USERS = API_PREFIX + "/users";
 	/**

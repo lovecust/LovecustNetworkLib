@@ -70,8 +70,8 @@ public class LovecustNetworkManager {
 	/**
 	 * Get internet status.
 	 */
-	public Observable<InternetStatus> getInternetStatus() {
-		return ensure(mApiInterface.getInternetStatus());
+	public Observable<InternetStatus> getInternetStatus(long usingTime, String acID) {
+		return ensure(mApiInterface.getInternetStatus(usingTime, acID));
 	}
 
 	/**

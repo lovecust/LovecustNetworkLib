@@ -15,7 +15,9 @@ import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.PATCH;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.Query;
 import rx.Observable;
 
 /**
@@ -39,7 +41,7 @@ interface LovecustNetworkInterface {
 	 * @param avatar Avatar detail.
 	 */
 	@Multipart
-	@POST(LovecustNetworkConstants.USERS_PROFILE_AVATAR)
+	@PUT(LovecustNetworkConstants.USERS_PROFILE_AVATAR)
 	Observable<AppProfileAvatar> updateProfileAvatar(@Part() MultipartBody.Part avatar);
 
 	/**
@@ -71,5 +73,8 @@ interface LovecustNetworkInterface {
 	 * Get internet status.
 	 */
 	@GET(LovecustNetworkConstants.GENERAL_INTERNET)
-	Observable<InternetStatus> getInternetStatus();
+	Observable<InternetStatus> getInternetStatus(
+			@Query("usingTime") long usingTime,
+	        @Query("acID") String acID
+	);
 }
